@@ -11,10 +11,10 @@ class ReaderForm(FlaskForm):
 
 
 class BookForm(FlaskForm):
-    book_title = StringField('Book Title')
-    book_author = StringField('Author')
-    book_length = StringField('Book Length')
-    book_desc = TextAreaField('Brief Description')
-    year_published = StringField('Publication Year')
+    book_title = StringField('Book Title', validators=[DataRequired()])
+    book_author = StringField('Author', validators=[DataRequired()])
+    book_length = StringField('Book Length', validators=[DataRequired()])
+    book_desc = TextAreaField('Brief Description', validators=[DataRequired()])
+    year_published = StringField('Publication Year', validators=[DataRequired()])
     read_by = SelectField('Read by', choices=[])
     submit = SubmitField('Enter')

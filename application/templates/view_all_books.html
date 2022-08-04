@@ -4,7 +4,7 @@
 {% for book in books %}
 {{ book.__str__() }}  
 {% if entity == 'Book' %}
-<b> Person Reading: </b> {{ book.reader.__str__() }}  <br>
+<b> Person Reading: </b> {{ book.reader.__str__() }} | <a href="{{ url_for('update_book', id=book.book_id) }}"> Update Book </a> <br> | <a href="{{ url_for('delete_book', id=book.book_id) }}"> Delete Book </a> <br>
 <br>
 {% endif %}
 {% endfor %}
