@@ -135,9 +135,13 @@ class TestPostRequests(TestBase):
         )
 
         self.assert200(response)
-        self.assertIn(b'Book Club')
-        self.assertIn(b'Book List')
-        self.assertIn(b'The Hobbit, written by J. R. R. Tolkien. Description: Adventures in the shire and beyond. It is 239 pages long and was published in 1937. Person Reading', response.data)
+        self.assertIn(b'Book Club', response.data)
+        self.assertIn(b'Book List', response.data)
+        self.assertIn(b'The Hobbit', response.data)
+        self.assertIn(b'J. R. R. Tolkien', response.data)
+        self.assertIn(b'Adventures in the shire and beyond', response.data)
+        self.assertIn(b'1937', response.data)
+
 
 # #post update book
     def test_post_update_book(self):
@@ -156,8 +160,13 @@ class TestPostRequests(TestBase):
         )
         
         self.assert200(response)
-        self.assertIn(b'Book Club')
-        self.assertIn(b'Book List')
-        self.assertIn(b'A Feast for Crows, written by George R. R. Martin. Description: Only vultures win. It is 753 pages long and was published in 2005. Person Reading', response.data)
+        self.assertIn(b'Book Club', response.data)
+        self.assertIn(b'Book List', response.data)
+        self.assertIn(b'A Feast for Crows', response.data)
+        self.assertIn(b'George R. R. Martin', response.data)
+        self.assertIn(b'Only vultures win', response.data)
+        self.assertIn(b'753', response.data)
    
+
+
 #seperate assertIns
