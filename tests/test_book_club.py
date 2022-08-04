@@ -165,7 +165,7 @@ class TestPostRequests(TestBase):
         self.assertIn(b'A Feast for Crows', response.data)
         self.assertIn(b'George R. R. Martin', response.data)
         self.assertIn(b'Only vultures win', response.data)
-        self.assertIn(b'753', response.data)
+        
    
 
 
