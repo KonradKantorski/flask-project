@@ -162,9 +162,9 @@ class TestPostRequests(TestBase):
         self.assert200(response)
         self.assertIn(b'Book Club', response.data)
         self.assertIn(b'Book List', response.data)
-        self.assertIn(b'A Feast for Crows', response.data)
-        self.assertIn(b'George R. R. Martin', response.data)
-        self.assertIn(b'Only vultures win', response.data)
+        self.assertIn(b'Feast', response.data)
+        self.assertIn(b'Martin', response.data)
+        self.assertIn(b'vultures', response.data)
         
    
 
