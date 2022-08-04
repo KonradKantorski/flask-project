@@ -1,0 +1,28 @@
+{% extends 'layout.html'  %}
+{% block body %}
+<!-- action="" below sends the form back to the same place as route -->
+<div class="Form">
+    <form method="POST" action="">
+            {{ form.hidden_tag() }}
+            {{ form.book_title.label }} {{ form.book_title }}<br>
+            {{ form.book_author.label }} {{ form.book_author }}<br>
+            {{ form.book_length.label }} {{ form.book_length }}<br>
+            {{ form.book_desc.label }} {{ form.book_desc }}<br>
+            {{ form.year_published.label }} {{ form.year_published }}<br>
+            {{ form.read_by.label }} {{ form.read_by }}
+            <br>
+            {{ form.submit }}
+
+
+    </form>
+
+    <div>
+        {% if errors %}
+        {% for error in errors %}
+        <p style="color:red;">{{ error }}</p>
+        {% endfor %}
+        {% endif %}
+    </div>
+
+</div>
+{% endblock body %}

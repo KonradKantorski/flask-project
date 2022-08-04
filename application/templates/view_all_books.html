@@ -1,0 +1,16 @@
+{% extends 'layout.html' %}
+{% block body %}
+<h2>{{ entity }} List</h2>
+{% for book in books %}
+{{ book.__str__() }}  
+{% if entity == 'Book' %}
+Person Reading: {{ book.reader.__str__() }}  <br>
+<br>
+{% endif %}
+{% endfor %}
+
+<br>
+
+<a href="{{ url_for('add_new_book') }}"> Add New Book </a>
+
+{% endblock body %}

@@ -1,0 +1,18 @@
+{% extends 'layout.html'  %}
+{% block body %}
+<!-- action="" below sends the form back to the same place as route and hidden tag helps with CSFR -->
+<div class="Form">
+    <form method="POST" action="">
+            {{ form.hidden_tag() }}
+            {{ form.forename.label }} {{ form.forename }}
+            {{ form.surname.label }} {{ form.surname }}
+            <br>
+            {{ form.submit }}
+
+
+    </form>
+
+
+
+</div>
+{% endblock body %}

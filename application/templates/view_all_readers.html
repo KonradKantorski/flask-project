@@ -1,0 +1,14 @@
+{% extends 'layout.html' %}
+{% block body %}
+        <h2>Readers</h2>
+        {% if not readers %}
+        <p>There are currently no readers</p>
+        {% else %}
+        {% for reader in readers %}
+        {{ reader.__str__() }}  | <a href="{{ url_for('update_reader', id=reader.rid) }}"> Update </a> |  <a href="{{ url_for('get_reader_by_id', id=reader.rid) }}">Page</a><br>
+        <br>
+        {% endfor %}
+        {% endif %}
+
+        <a href="{{ url_for('create_reader') }}"> Add New Reader </a>
+{% endblock body %}
