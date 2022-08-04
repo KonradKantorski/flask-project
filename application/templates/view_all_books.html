@@ -4,7 +4,7 @@
 {% for book in books %}
 {{ book.__str__() }}  
 {% if entity == 'Book' %}
-Person Reading: {{ book.reader.__str__() }}  <br>
+<b> Person Reading: </b> {{ book.reader.__str__() }}  <br>
 <br>
 {% endif %}
 {% endfor %}

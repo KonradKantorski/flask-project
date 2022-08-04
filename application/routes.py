@@ -9,7 +9,7 @@ def index():
     return render_template('home.html')
 
 
-#                                           CRUD Create
+#---------------------------------------------------------- Create Readers
 
 @app.route('/add-reader', methods=['GET', 'POST'])
 def create_reader():
@@ -23,13 +23,11 @@ def create_reader():
         return redirect(url_for('view_all_readers'))
     return render_template('reader_form.html', form=form)
 
-#                                           Crud Read
+#---------------------------------------------------------- Read Readers
 @app.route('/view-readers')
 def view_all_readers():
     readers = Reader.query.order_by(Reader.forename).all()
     return render_template('view_all_readers.html', readers=list(readers))
-
-# create html for get reader by name -- or delete
 
 
 @app.route('/get-reader-by-id/<int:id>')
@@ -38,7 +36,7 @@ def get_reader_by_id(id):
     return render_template('reader_by_id.html', reader=reader)
 
 
-#                                                   CRUD Update
+# ---------------------------------------------------------- Update Readers
 
 
 @app.route('/update-reader/<int:id>', methods = ['GET', 'POST'])
@@ -53,7 +51,7 @@ def update_reader(id):
         return redirect(url_for('view_all_readers'))
     return render_template('reader_form.html', form=form)
 
-#                                                   CRUD Reader Delete
+# ---------------------------------------------------------- Delete Readers
 
 @app.route('/delete-reader/<int:id>')
 def delete_reader(id):
@@ -66,7 +64,7 @@ def delete_reader(id):
 
 
 
-#    ------------------------------------------------------------ CRUD for books
+# ---------------------------------------------------------- Create Books
 
 @app.route('/add-book', methods=['GET', 'POST'])
 def add_new_book():
@@ -86,10 +84,14 @@ def add_new_book():
         return redirect(url_for('view_all_books'))
     return render_template('book_form.html', form=form)
 
+#  ---------------------------------------------------------- Read Books
+
 @app.route('/view-books')
 def view_all_books():
     books = Book.query.all()
     return render_template('view_all_books.html', entity='Book', books=books)
+
+# ---------------------------------------------------------- Update Books
 
 @app.route('/update-book/<int:id>', methods=['GET', 'POST'])
 def update_book(id):
@@ -112,6 +114,7 @@ def update_book(id):
     form.year_published.data = book_to_update.year_published
     return render_template('book_form.html', form=form)
 
+# ----------------------------------------------------------Delete Books
 
 @app.route('/delete-book/<int:id>')
 def delete_book(id):
