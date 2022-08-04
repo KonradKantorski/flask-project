@@ -27,5 +27,5 @@ source venv/bin/activate
 pip3 install -r requirements.txt
 
 python3 create.py
-python3 -m gunicorn -D --bind 0.0.0.0:5000 ----workers 4 app:app
+python3 -m gunicorn -D --bind 0.0.0.0:5000 --workers 4 app:app
 EOF
