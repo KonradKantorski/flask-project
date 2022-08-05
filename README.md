@@ -31,14 +31,23 @@ In addition, I found that brief journaling and reflection at the end of the day 
 
 ##### User Stories
 Generating user stories during the design phase helped me producing a better idea of how the application should work. Here are some examples:
+
 •	As a user I wish to easily navigate across the application so that I can add myself as a reader, add any books which I am reading, as well as displaying that I am reading those books
+
 •	As a user I want to update information regarding my name and surname if I change my mind and wish not to share personal details
+
 •	As a user I wish to update any books I am reading if I start to believe that a different description is more suitable
+
 •	As a user I wish to delete both myself and the book so that the information I provided is no longer displayed
+
 •	As a user I wish to see other users and also see what they are reading
+
 •	As a developer I wish to have a functioning application that allows user to store their data 
+
 •	As a developer I wish to utilise google cloud platform for virtual machines so that I do need extra tools locally 
+
 •	As a developer I wish to be able to make updates to the application so that I can make improvements 
+
 •	As a developer I want to have a high coverage of tests to ensure that the code is robust
 
 #### Risk Assessment 
