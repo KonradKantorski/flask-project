@@ -3,9 +3,9 @@ from application import app, db
 from application.models import *
 from flask_testing import TestCase
 
-from application.routes import add_new_book
+from application.routes import *
 
-# GET Reuquest tests
+# ----------------------------------------------------------------- GET Reuquest tests
 
 # test in different database so that we do not risk production database
 
@@ -58,7 +58,7 @@ class TestHomeView(TestBase):
     def test_view_readers_by_id(self):
         response = self.client.get(url_for('get_reader_by_id', id=1))
         self.assert200(response)
-        self.assertIn(b'Reader by ID', response.data)
+        self.assertIn(b'Reader Page', response.data)
 
 #test update reader
     def test_update_reader(self):
@@ -96,7 +96,7 @@ class TestHomeView(TestBase):
         self.assert200(response)
         self.assertIn(b'Book List', response.data)
 
-# POST requests
+# -------------------------------------------------------- POST requests
 
 class TestPostRequests(TestBase):
     def test_post_add_reader(self):
@@ -144,26 +144,26 @@ class TestPostRequests(TestBase):
 
 
 # #post update book
-  #  def test_post_update_book(self):
- #       response = self.client.post(
-         #   url_for('update_book', id=1),
-        #    data = dict(
-       #         book_title = 'A Feast for Crows',
-      #          book_author = 'George R. R. Martin',
-     #           book_desc = 'Only vulturess win',
-    #            book_length = 753,
-   #             year_published = 2005,
-  #              read_by = 1
- #           ),
-#
-        #        follow_redirects = True
-       # )
-      #  
-     #   self.assert200(response)
-    #    self.assertIn(b'Book Club', response.data)
-   #     self.assertIn(b'Book List', response.data)
-  #      self.assertIn(b'Only vultures win', response.data)
- #       self.assertIn(b'published in 2005', response.data)
+    def test_post_update_book(self):
+        response = self.client.post(
+            url_for('update_book', id=1),
+            data = dict(
+                book_title = 'A Feast for Crows',
+                book_author = 'George R. R. Martin',
+                book_desc = 'Only vultures win',
+                book_length = 753,
+                year_published = 2005,
+                read_by = 1
+            ),
+
+                follow_redirects = True
+        )
+        
+        self.assert200(response)
+        self.assertIn(b'Book Club', response.data)
+        self.assertIn(b'Book List', response.data)
+        self.assertIn(b'Only vultures win', response.data)
+        self.assertIn(b'published in 2005', response.data)
         
    
 

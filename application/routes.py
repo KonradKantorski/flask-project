@@ -100,7 +100,7 @@ def update_book(id):
     readers = Reader.query.all()
     form.read_by.choices = [(reader.rid, f"{reader.forename} {reader.surname}") for reader in readers]
     if form.validate_on_submit():
-        book_to_update.title = form.book_title.data
+        book_to_update.title = form.book_title.data 
         book_to_update.author = form.book_author.data
         book_to_update.length = form.book_length.data
         book_to_update.book_desc = form.book_desc.data

@@ -1,5 +1,5 @@
 {% extends 'layout.html' %}
 {% block body %}
-<h2>Reader by ID</h2>
+<h2>Reader Page</h2>
 <p>{{ reader.__str__() }}  | <a href="{{ url_for('add_new_book', id=reader.rid) }}"> Add New Book </a>  </p>
 {% endblock body %}
