@@ -1,6 +1,7 @@
-##Book Library Project
+### Book Library Project
 By Konrad Kantorski
 ### Project Objective and overview
+
 •	To create a CRUD application with utilisation of supporting tools,
 methodologies and technologies that encapsulate all core modules
 covered during training.
@@ -10,7 +11,7 @@ Read – by being able to view all readers and all books
 Update – by being able to update already existing information regarding readers and books
 Delete – by being able to delete readers and books
 
-The application will be coded in python using the flask micro-framework which will provide front end functionality and usability with http servers. In order to make the app more user friendly the python template jinja2 will be used to create HTML and return to the http response. The app will also include a relational database which will allow to store data for the duration of the project. Furthermore, to ensure quality standards of the code, the app will include a series of unit tests using python, integration tests using selenium and automated tests to validate the application. Lastly, the code will be fully integrated with a version control system (Git) that will allow our continuous integration system (Jenkins) to pull the code using a webhook and subsequently deploy the application on a Google cloud based virtual machine using gunicorn. 
+The application will be coded in python using the flask micro-framework which will provide front end functionality and usability with http servers. In order to make the app more user friendly the python template jinja2 will be used to create HTML and return to the http response. The app will also include a relational database which will allow to store data for the duration of the project. Furthermore, to ensure quality standards of the code, the app will include a series of unit tests using python, integration tests using selenium and automated tests to validate the application. Lastly, the code will be fully integrated with a version control system (Git - github) that will allow our continuous integration system (Jenkins) to pull the code using a webhook and subsequently deploy the application on a Google cloud based virtual machine using gunicorn. 
 
 ### Documentation and Design
 
@@ -45,7 +46,26 @@ Conducting a basic risk assessment with the tools I use in mind has helped me to
 
 ![image](https://user-images.githubusercontent.com/108797859/183068716-2b4afaf2-5ac7-4d20-a814-17f6f22b4b87.png)
 
-This framework has saved me some time as I had problems with GCP - mainly that the MySQL db did not work, despite taking the assumingly correct steps - thus to not waste more time I switched to SQLite. More minor problems were also present with the VMs which required to set up new ones with an older version of the Ubuntu OS.
+#### Front End display
+
+The homepage display welcomes with a short message about the app.
+
+![image](https://user-images.githubusercontent.com/108797859/183075566-31f07e79-9c8d-4008-aa7a-303e1594cea5.png)
+
+It also contains hyperlinks to easily navigate through the app, allowing users to easily access CRUD functions.
+
+![image](https://user-images.githubusercontent.com/108797859/183075795-8b83d1b0-6e2c-42a9-b32f-263944af485d.png)
+
+![image](https://user-images.githubusercontent.com/108797859/183075901-684d4d9e-36c0-4bec-b4ee-f92d0107f201.png)
+
+![image](https://user-images.githubusercontent.com/108797859/183076024-116a3eeb-79c1-4316-8ad7-29f5e20d7351.png)
+ 
+ 
+Readers can access their reader page and add books directly from there.
+
+![image](https://user-images.githubusercontent.com/108797859/183076336-f751b977-55c7-43a7-b9ab-055224c28eb0.png)
+
+
 
 #### Testing 
 
@@ -78,6 +98,22 @@ I tested this out on the front end and found that updating the title of the book
 ![image](https://user-images.githubusercontent.com/108797859/183071358-07fe75d5-ddca-4282-a95c-ff28b959d990.png)
 
 Upon the successful build, I connected it with a WSGI server by using gunicorn, which has allowed me to run the flask app on multiple threads. Furthermore, I added a deployment script that allows me the app to stop without continuously working. 
+
+Lastly, I ensured that artefacts were archived so that I can access the reports.
+
+![image](https://user-images.githubusercontent.com/108797859/183075090-111a7913-45b9-4406-9834-86a1e7dab9ce.png)
+
+With the index report suggesting high coverage
+
+![image](https://user-images.githubusercontent.com/108797859/183075214-9e0ddfff-cd16-4e55-919f-5e1e8878e176.png)
+
+#### Reflection on the risk assessment
+
+This framework has saved me some time as I had problems with GCP - mainly that the MySQL db did not work, despite taking the assumingly correct steps - thus to not waste more time I switched to SQLite. More minor problems were also present with the VMs which required to set up new ones with an older version of the Ubuntu OS. I also encountered a problem when setting versions of requirements - there must have been some inconsistency across the VMs and errors came up when I set their versions so I left them as they were (except for selenium).
+
+#### Further versions of the app
+
+Adding extra functionality and extending the abilities of the app are possible and achievable. One could link the app to a database of books and allow readers to update their reading wish list, with an ability to order those books through external stores and leaving their reviews on our app. 
 
 #### Acknowledgments 
 
