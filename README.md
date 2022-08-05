@@ -106,7 +106,7 @@ I tested this out on the front end and found that updating the title of the book
 
 ![image](https://user-images.githubusercontent.com/108797859/183071358-07fe75d5-ddca-4282-a95c-ff28b959d990.png)
 
-Upon the successful build, I connected it with a WSGI server by using gunicorn, which has allowed me to run the flask app on multiple threads. Furthermore, I added a deployment script that allows me the app to stop without continuously working. 
+Upon the successful build, I connected it with a WSGI server by using gunicorn, which has allowed me to run the flask app on multiple threads. Furthermore, I added a deployment script that allows the app to stop without continuously working on the production server. 
 
 Lastly, I ensured that artefacts were archived so that I can access the reports.
 
