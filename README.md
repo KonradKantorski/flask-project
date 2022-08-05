@@ -10,7 +10,7 @@ Read – by being able to view all readers and all books
 Update – by being able to update already existing information regarding readers and books
 Delete – by being able to delete readers and books
 
-Moreover, the application will be coded in python using the flask micro-framework which will provide front end functionality and usability with http servers. In order to make the app more user friendly the python template jinja2 will be used to create HTML and return to the http response. The app will also include a relational database which will allow to store data for the duration of the project. Furthermore, to ensure quality standards of the code, the app will include a series of unit tests using python, integration tests using selenium and automated tests to validate the application. Lastly, the code will be fully integrated with a version control system (Git) that will allow our continuous integration system (Jenkins) to pull the code using a webhook and subsequently deploy the application on a Google cloud based virtual machine using gunicorn. 
+The application will be coded in python using the flask micro-framework which will provide front end functionality and usability with http servers. In order to make the app more user friendly the python template jinja2 will be used to create HTML and return to the http response. The app will also include a relational database which will allow to store data for the duration of the project. Furthermore, to ensure quality standards of the code, the app will include a series of unit tests using python, integration tests using selenium and automated tests to validate the application. Lastly, the code will be fully integrated with a version control system (Git) that will allow our continuous integration system (Jenkins) to pull the code using a webhook and subsequently deploy the application on a Google cloud based virtual machine using gunicorn. 
 
 ### Documentation and Design
 
@@ -44,6 +44,8 @@ Generating user stories during the design phase helped me producing a better ide
 Conducting a basic risk assessment with the tools I use in mind has helped me to think about what issues I may encounter and what measures I should take to prevent them
 
 ![image](https://user-images.githubusercontent.com/108797859/183068716-2b4afaf2-5ac7-4d20-a814-17f6f22b4b87.png)
+
+This framework has saved me some time as I had problems with GCP - mainly that the MySQL db did not work, despite taking the assumingly correct steps - thus to not waste more time I switched to SQLite. More minor problems were also present with the VMs which required to set up new ones with an older version of the Ubuntu OS.
 
 #### Testing 
 
